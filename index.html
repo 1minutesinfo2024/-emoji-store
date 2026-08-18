@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EmojiMela - Original Emojis ₹5 से</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f7fb;
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: white;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #6c2bd9;
+    }
+
+    .search {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      width: 220px;
+      outline: none;
+    }
+
+    /* HERO */
+    .hero {
+      margin: 25px 5%;
+      padding: 45px 25px;
+      border-radius: 25px;
+      text-align: center;
+      background: linear-gradient(135deg, #6c2bd9, #a44cff);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .hero button {
+      background: white;
+      color: #6c2bd9;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* CATEGORIES */
+    .section {
+      padding: 20px 5%;
+    }
+
+    .section h2 {
+      margin-bottom: 18px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 12px;
+    }
+
+    .category {
+      background: white;
+      padding: 18px 8px;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+    }
+
+    .category .emoji {
+      font-size: 35px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      font-size: 75px;
+      padding: 15px;
+    }
+
+    .product h3 {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .price {
+      color: #6c2bd9;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 8px;
+    }
+
+    .buy {
+      width: 100%;
+      border: none;
+      background: #6c2bd9;
+      color: white;
+      padding: 11px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buy:hover {
+      background: #5420aa;
+    }
+
+    /* PACK */
+    .pack {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-top: 10px;
+    }
+
+    .pack h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .pack-price {
+      font-size: 28px;
+      color: #6c2bd9;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding: 30px 5%;
+      background: #171321;
+      color: white;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 7px;
+      color: #ccc;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      header {
+        padding: 12px 4%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .search {
+        width: 130px;
+        padding: 8px;
+      }
+
+      .hero {
+        margin: 18px 4%;
+        padding: 35px 15px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 15px 4%;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .product {
+        padding: 12px;
+      }
+
+      .product-image {
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">😊 EmojiMela</div>
+
+    <input
+      type="text"
+      class="search"
+      id="searchBox"
+      placeholder="🔍 Emoji खोजें..."
+      onkeyup="searchEmoji()"
+    >
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>😊 अपने Mood को Emoji में बदलें</h1>
+
+    <p>
+      Original और मजेदार Emojis सिर्फ ₹5 से
+    </p>
+
+    <button onclick="scrollToProducts()">
+      अभी Emoji देखें
+    </button>
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <section class="section">
+
+    <h2>📂 Categories</h2>
+
+    <div class="categories">
+
+      <div class="category">
+        <span class="emoji">😂</span>
+        Funny
+      </div>
+
+      <div class="category">
+        <span class="emoji">❤️</span>
+        Love
+      </div>
+
+      <div class="category">
+        <span class="emoji">😢</span>
+        Sad
+      </div>
+
+      <div class="category">
+        <span class="emoji">😡</span>
+        Angry
+      </div>
+
+      <div class="category">
+        <span class="emoji">😎</span>
+        Cool
+      </div>
+
+      <div class="category">
+        <span class="emoji">🎉</span>
+        Festival
+      </div>
+
+      <div class="category">
+        <span class="emoji">🥰</span>
+        Cute
+      </div>
+
+      <div class="category">
+        <span class="emoji">🙏</span>
+        Indian
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+
+    <h2>🔥 Trending Emojis</h2>
+
+    <div class="products" id="productList">
+
+
+      <div class="product">
+
+        <div class="product-image">
+          😂
+        </div>
+
+        <h3>Funny Laugh</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Funny Laugh')">
+          BUY NOW
+        </button>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          😎
+        </div>
+
+        <h3>Cool Attitude</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Cool Attitude')">
+          BUY NOW
+        </button>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          ❤️
+        </div>
+
+        <h3>Love Heart</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Love Heart')">
+          BUY NOW
+        </button>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          😡
+        </div>
+
+        <h3>Angry Reaction</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Angry Reaction')">
+          BUY NOW
+        </button>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          🥰
+        </div>
+
+        <h3>Cute Love</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Cute Love')">
+          BUY NOW
+        </button>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          🎉
+        </div>
+
+        <h3>Party Celebration</h3>
+
+        <div class="price">
+          ₹5
+        </div>
+
+        <button class="buy" onclick="buyEmoji('Party Celebration')">
+          BUY NOW
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PACK -->
+  <section class="section">
+
+    <h2>🎁 Best Emoji Pack</h2>
+
+    <div class="pack">
+
+      <h3>🔥 10 Emoji Pack</h3>
+
+      <p>
+        10 Original Emojis एक साथ
+      </p>
+
+      <div class="pack-price">
+        ₹29
+      </div>
+
+      <button class="buy" onclick="buyPack()">
+        BUY PACK
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h3>😊 EmojiMela</h3>
+
+    <p>Original Emojis ₹5 से</p>
+
+    <p>© 2026 EmojiMela. All Rights Reserved.</p>
+
+  </footer>
+
+
+  <script>
+
+    function scrollToProducts() {
+
+      document
+        .getElementById("products")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    function buyEmoji(name) {
+
+      alert(
+        "आपने " +
+        name +
+        " चुना है।\n\n₹5 Payment System हम अगले Step में जोड़ेंगे।"
+      );
+
+    }
+
+
+    function buyPack() {
+
+      alert(
+        "10 Emoji Pack चुना गया है।\n\nPayment System अगले Step में जोड़ा जाएगा।"
+      );
+
+    }
+
+
+    function searchEmoji() {
+
+      let input =
+        document
+          .getElementById("searchBox")
+          .value
+          .toLowerCase();
+
+      let products =
+        document
+          .querySelectorAll(".product");
+
+      products.forEach(function(product) {
+
+        let text =
+          product.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+
+          product.style.display = "block";
+
+        } else {
+
+          product.style.display = "none";
+
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
