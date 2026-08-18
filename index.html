@@ -1,560 +1,631 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>EmojiMela - Original Emojis ₹5 से</title>
+<title>EmojiMela - Free & Premium Emojis</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #f7f7fb;
-      color: #222;
-    }
+body{
+  background:#f7f7fb;
+  color:#222;
+}
 
-    /* HEADER */
-    header {
-      background: white;
-      padding: 15px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+header{
+  background:white;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #6c2bd9;
-    }
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#6c2bd9;
+  white-space:nowrap;
+}
 
-    .search {
-      padding: 10px 15px;
-      border: 1px solid #ddd;
-      border-radius: 25px;
-      width: 220px;
-      outline: none;
-    }
+.search{
+  width:250px;
+  padding:11px 16px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  outline:none;
+}
 
-    /* HERO */
-    .hero {
-      margin: 25px 5%;
-      padding: 45px 25px;
-      border-radius: 25px;
-      text-align: center;
-      background: linear-gradient(135deg, #6c2bd9, #a44cff);
-      color: white;
-    }
+.hero{
+  margin:25px 5%;
+  padding:55px 20px;
+  border-radius:28px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#6c2bd9,#a44cff,#ff4f9a);
+  box-shadow:0 12px 35px rgba(108,43,217,.25);
+}
 
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
+.hero h1{
+  font-size:40px;
+  margin-bottom:12px;
+}
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
+}
 
-    .hero button {
-      background: white;
-      color: #6c2bd9;
-      border: none;
-      padding: 13px 25px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 16px;
-    }
+.hero button{
+  border:0;
+  padding:14px 25px;
+  border-radius:30px;
+  background:white;
+  color:#6c2bd9;
+  font-weight:bold;
+  font-size:16px;
+}
 
-    /* CATEGORIES */
-    .section {
-      padding: 20px 5%;
-    }
+.section{
+  padding:20px 5%;
+}
 
-    .section h2 {
-      margin-bottom: 18px;
-    }
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 12px;
-    }
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+  gap:12px;
+}
 
-    .category {
-      background: white;
-      padding: 18px 8px;
-      border-radius: 15px;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      transition: 0.2s;
-    }
+.category{
+  background:white;
+  padding:18px 8px;
+  border-radius:17px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
 
-    .category:hover {
-      transform: translateY(-3px);
-    }
+.category span{
+  display:block;
+  font-size:35px;
+  margin-bottom:7px;
+}
 
-    .category .emoji {
-      font-size: 35px;
-      display: block;
-      margin-bottom: 7px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:18px;
+}
 
-    /* PRODUCTS */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 18px;
-    }
+.product{
+  background:white;
+  padding:18px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  position:relative;
+  transition:.25s;
+}
 
-    .product {
-      background: white;
-      padding: 18px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    }
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
 
-    .product-image {
-      font-size: 75px;
-      padding: 15px;
-    }
+.product-image{
+  font-size:72px;
+  padding:12px;
+}
 
-    .product h3 {
-      margin: 8px 0;
-      font-size: 16px;
-    }
+.product h3{
+  font-size:16px;
+  margin:7px 0;
+}
 
-    .price {
-      color: #6c2bd9;
-      font-weight: bold;
-      font-size: 20px;
-      margin: 8px;
-    }
+.price{
+  color:#6c2bd9;
+  font-size:20px;
+  font-weight:bold;
+  margin:9px;
+}
 
-    .buy {
-      width: 100%;
-      border: none;
-      background: #6c2bd9;
-      color: white;
-      padding: 11px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.buy,.copy{
+  width:100%;
+  border:0;
+  padding:11px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .buy:hover {
-      background: #5420aa;
-    }
+.buy{
+  background:#6c2bd9;
+  color:white;
+}
 
-    /* PACK */
-    .pack {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      margin-top: 10px;
-    }
+.copy{
+  background:#eee8ff;
+  color:#6c2bd9;
+  margin-top:8px;
+}
 
-    .pack h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+.premium-section{
+  background:linear-gradient(135deg,#18121f,#302044);
+  color:white;
+  margin-top:20px;
+  padding:35px 5%;
+}
 
-    .pack-price {
-      font-size: 28px;
-      color: #6c2bd9;
-      font-weight: bold;
-      margin: 10px;
-    }
+.premium-title{
+  text-align:center;
+  margin-bottom:25px;
+}
 
-    /* FOOTER */
-    footer {
-      margin-top: 40px;
-      padding: 30px 5%;
-      background: #171321;
-      color: white;
-      text-align: center;
-    }
+.premium-title h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
 
-    footer p {
-      margin: 7px;
-      color: #ccc;
-    }
+.premium-card{
+  background:white;
+  color:#222;
+  border-radius:22px;
+  padding:20px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
 
-    /* MOBILE */
-    @media (max-width: 600px) {
+.badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:#ffb800;
+  color:#222;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
 
-      header {
-        padding: 12px 4%;
-      }
+.premium-emoji{
+  font-size:75px;
+  margin:10px;
+}
 
-      .logo {
-        font-size: 20px;
-      }
+.premium-price{
+  color:#e09a00;
+  font-size:22px;
+  font-weight:bold;
+  margin:10px;
+}
 
-      .search {
-        width: 130px;
-        padding: 8px;
-      }
+.pack{
+  background:white;
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
 
-      .hero {
-        margin: 18px 4%;
-        padding: 35px 15px;
-      }
+.pack-price{
+  font-size:30px;
+  color:#6c2bd9;
+  font-weight:bold;
+  margin:12px;
+}
 
-      .hero h1 {
-        font-size: 28px;
-      }
+footer{
+  margin-top:40px;
+  background:#171321;
+  color:white;
+  padding:35px 5%;
+  text-align:center;
+}
 
-      .hero p {
-        font-size: 15px;
-      }
+footer a{
+  color:#ddd;
+  margin:0 8px;
+  text-decoration:none;
+}
 
-      .section {
-        padding: 15px 4%;
-      }
+footer p{
+  margin-top:10px;
+  color:#bbb;
+}
 
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
+@media(max-width:600px){
 
-      .product {
-        padding: 12px;
-      }
+header{
+  padding:12px 4%;
+}
 
-      .product-image {
-        font-size: 60px;
-      }
-    }
-  </style>
+.logo{
+  font-size:19px;
+}
+
+.search{
+  width:140px;
+  padding:9px;
+}
+
+.hero{
+  margin:18px 4%;
+  padding:40px 15px;
+}
+
+.hero h1{
+  font-size:28px;
+}
+
+.hero p{
+  font-size:15px;
+}
+
+.section{
+  padding:16px 4%;
+}
+
+.products{
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.product{
+  padding:12px;
+}
+
+.product-image,
+.premium-emoji{
+  font-size:58px;
+}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">😊 EmojiMela</div>
+<header>
+
+<div class="logo">😊 EmojiMela</div>
+
+<input
+class="search"
+id="searchBox"
+type="text"
+placeholder="🔍 Emoji खोजें..."
+onkeyup="searchEmoji()"
+>
+
+</header>
+
+<section class="hero">
+
+<h1>😊 अपने Mood को Emoji में बदलें</h1>
+
+<p>
+Free Emojis का मज़ा लें और Premium Emojis unlock करें 👑
+</p>
+
+<button onclick="scrollToFree()">
+✨ Emojis देखें
+</button>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>📂 Categories</h2>
+</div>
+
+<div class="categories">
+
+<div class="category">
+<span>😂</span>
+Funny
+</div>
+
+<div class="category">
+<span>❤️</span>
+Love
+</div>
 
-    <input
-      type="text"
-      class="search"
-      id="searchBox"
-      placeholder="🔍 Emoji खोजें..."
-      onkeyup="searchEmoji()"
-    >
-  </header>
+<div class="category">
+<span>😢</span>
+Sad
+</div>
 
+<div class="category">
+<span>😡</span>
+Angry
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>😊 अपने Mood को Emoji में बदलें</h1>
+<div class="category">
+<span>😎</span>
+Cool
+</div>
 
-    <p>
-      Original और मजेदार Emojis सिर्फ ₹5 से
-    </p>
+<div class="category">
+<span>🥰</span>
+Cute
+</div>
 
-    <button onclick="scrollToProducts()">
-      अभी Emoji देखें
-    </button>
-  </section>
+<div class="category">
+<span>🎉</span>
+Festival
+</div>
 
+<div class="category">
+<span>🙏</span>
+Indian
+</div>
 
-  <!-- CATEGORIES -->
-  <section class="section">
+</div>
+</section>
 
-    <h2>📂 Categories</h2>
+<section class="section" id="free">
 
-    <div class="categories">
+<div class="section-title">
+<h2>🆓 Free Emojis</h2>
+<span>FREE</span>
+</div>
 
-      <div class="category">
-        <span class="emoji">😂</span>
-        Funny
-      </div>
+<div class="products" id="productList">
 
-      <div class="category">
-        <span class="emoji">❤️</span>
-        Love
-      </div>
+<div class="product">
+<div class="product-image">😂</div>
+<h3>Funny Laugh</h3>
+<div class="price">FREE</div>
+<button class="copy" onclick="copyEmoji('😂')">
+📋 COPY
+</button>
+</div>
 
-      <div class="category">
-        <span class="emoji">😢</span>
-        Sad
-      </div>
+<div class="product">
+<div class="product-image">❤️</div>
+<h3>Love Heart</h3>
+<div class="price">FREE</div>
+<button class="copy" onclick="copyEmoji('❤️')">
+📋 COPY
+</button>
+</div>
 
-      <div class="category">
-        <span class="emoji">😡</span>
-        Angry
-      </div>
+<div class="product">
+<div class="product-image">😎</div>
+<h3>Cool Attitude</h3>
+<div class="price">FREE</div>
+<button class="copy" onclick="copyEmoji('😎')">
+📋 COPY
+</button>
+</div>
 
-      <div class="category">
-        <span class="emoji">😎</span>
-        Cool
-      </div>
+<div class="product">
+<div class="product-image">🥰</div>
+<h3>Cute Love</h3>
+<div class="price">FREE</div>
+<button class="copy" onclick="copyEmoji('🥰')">
+📋 COPY
+</button>
+</div>
 
-      <div class="category">
-        <span class="emoji">🎉</span>
-        Festival
-      </div>
+</div>
+</section>
 
-      <div class="category">
-        <span class="emoji">🥰</span>
-        Cute
-      </div>
+<!-- PREMIUM SECTION -->
 
-      <div class="category">
-        <span class="emoji">🙏</span>
-        Indian
-      </div>
+<section class="premium-section">
 
-    </div>
+<div class="premium-title">
 
-  </section>
+<h2>👑 Premium Emojis</h2>
 
+<p>
+Exclusive Emojis — सिर्फ Premium Members के लिए
+</p>
 
-  <!-- PRODUCTS -->
-  <section class="section" id="products">
+</div>
 
-    <h2>🔥 Trending Emojis</h2>
+<div class="products">
 
-    <div class="products" id="productList">
+<div class="premium-card">
 
+<div class="badge">👑 PREMIUM</div>
 
-      <div class="product">
+<div class="premium-emoji">🤣</div>
 
-        <div class="product-image">
-          😂
-        </div>
+<h3>Super Funny</h3>
 
-        <h3>Funny Laugh</h3>
+<div class="premium-price">₹5</div>
 
-        <div class="price">
-          ₹5
-        </div>
+<button class="buy" onclick="buyPremium('Super Funny')">
+💎 BUY NOW
+</button>
 
-        <button class="buy" onclick="buyEmoji('Funny Laugh')">
-          BUY NOW
-        </button>
+</div>
 
-      </div>
+<div class="premium-card">
 
+<div class="badge">👑 PREMIUM</div>
 
-      <div class="product">
+<div class="premium-emoji">😍</div>
 
-        <div class="product-image">
-          😎
-        </div>
+<h3>Romantic Love</h3>
 
-        <h3>Cool Attitude</h3>
+<div class="premium-price">₹5</div>
 
-        <div class="price">
-          ₹5
-        </div>
+<button class="buy" onclick="buyPremium('Romantic Love')">
+💎 BUY NOW
+</button>
 
-        <button class="buy" onclick="buyEmoji('Cool Attitude')">
-          BUY NOW
-        </button>
+</div>
 
-      </div>
+<div class="premium-card">
 
+<div class="badge">👑 PREMIUM</div>
 
-      <div class="product">
+<div class="premium-emoji">😈</div>
 
-        <div class="product-image">
-          ❤️
-        </div>
+<h3>Attitude Devil</h3>
 
-        <h3>Love Heart</h3>
+<div class="premium-price">₹5</div>
 
-        <div class="price">
-          ₹5
-        </div>
+<button class="buy" onclick="buyPremium('Attitude Devil')">
+💎 BUY NOW
+</button>
 
-        <button class="buy" onclick="buyEmoji('Love Heart')">
-          BUY NOW
-        </button>
+</div>
 
-      </div>
+<div class="premium-card">
 
+<div class="badge">👑 PREMIUM</div>
 
-      <div class="product">
+<div class="premium-emoji">🤩</div>
 
-        <div class="product-image">
-          😡
-        </div>
+<h3>Star Eyes</h3>
 
-        <h3>Angry Reaction</h3>
+<div class="premium-price">₹5</div>
 
-        <div class="price">
-          ₹5
-        </div>
+<button class="buy" onclick="buyPremium('Star Eyes')">
+💎 BUY NOW
+</button>
 
-        <button class="buy" onclick="buyEmoji('Angry Reaction')">
-          BUY NOW
-        </button>
+</div>
 
-      </div>
+</div>
 
+</section>
 
-      <div class="product">
+<section class="section">
 
-        <div class="product-image">
-          🥰
-        </div>
+<h2>🎁 Best Premium Pack</h2>
 
-        <h3>Cute Love</h3>
+<div class="pack">
 
-        <div class="price">
-          ₹5
-        </div>
+<h3>👑 10 Premium Emoji Pack</h3>
 
-        <button class="buy" onclick="buyEmoji('Cute Love')">
-          BUY NOW
-        </button>
+<p>
+10 Exclusive Premium Emojis एक साथ
+</p>
 
-      </div>
+<div class="pack-price">
+₹29
+</div>
 
+<button class="buy" onclick="buyPack()">
+🔥 BUY PREMIUM PACK
+</button>
 
-      <div class="product">
+</div>
 
-        <div class="product-image">
-          🎉
-        </div>
+</section>
 
-        <h3>Party Celebration</h3>
+<footer>
 
-        <div class="price">
-          ₹5
-        </div>
+<h3>😊 EmojiMela</h3>
 
-        <button class="buy" onclick="buyEmoji('Party Celebration')">
-          BUY NOW
-        </button>
+<p>Free & Premium Emojis — आपकी Feelings, आपके Emojis ❤️</p>
 
-      </div>
+<br>
 
-    </div>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
-  </section>
+<p>© 2026 EmojiMela. All Rights Reserved.</p>
 
+</footer>
 
-  <!-- PACK -->
-  <section class="section">
+<script>
 
-    <h2>🎁 Best Emoji Pack</h2>
+function scrollToFree(){
 
-    <div class="pack">
+document.getElementById("free")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-      <h3>🔥 10 Emoji Pack</h3>
+}
 
-      <p>
-        10 Original Emojis एक साथ
-      </p>
+function copyEmoji(emoji){
 
-      <div class="pack-price">
-        ₹29
-      </div>
+navigator.clipboard.writeText(emoji);
 
-      <button class="buy" onclick="buyPack()">
-        BUY PACK
-      </button>
+alert(
+emoji + " Copy हो गया! 😊"
+);
 
-    </div>
+}
 
-  </section>
+function buyPremium(name){
 
+alert(
+"👑 " + name +
+" Premium Emoji चुना गया है।\n\n" +
+"💳 Payment System अगले Step में Razorpay से जोड़ेंगे।"
+);
 
-  <!-- FOOTER -->
-  <footer>
+}
 
-    <h3>😊 EmojiMela</h3>
+function buyPack(){
 
-    <p>Original Emojis ₹5 से</p>
+alert(
+"🎁 Premium 10 Emoji Pack चुना गया है।\n\n" +
+"💳 Payment System अगले Step में जोड़ेंगे।"
+);
 
-    <p>© 2026 EmojiMela. All Rights Reserved.</p>
+}
 
-  </footer>
+function searchEmoji(){
 
+let input =
+document
+.getElementById("searchBox")
+.value
+.toLowerCase();
 
-  <script>
+let products =
+document
+.querySelectorAll(".product");
 
-    function scrollToProducts() {
+products.forEach(function(product){
 
-      document
-        .getElementById("products")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
+let text =
+product.innerText.toLowerCase();
 
-    }
+if(text.includes(input)){
 
+product.style.display="block";
 
-    function buyEmoji(name) {
+}else{
 
-      alert(
-        "आपने " +
-        name +
-        " चुना है।\n\n₹5 Payment System हम अगले Step में जोड़ेंगे।"
-      );
+product.style.display="none";
 
-    }
+}
 
+});
 
-    function buyPack() {
+}
 
-      alert(
-        "10 Emoji Pack चुना गया है।\n\nPayment System अगले Step में जोड़ा जाएगा।"
-      );
-
-    }
-
-
-    function searchEmoji() {
-
-      let input =
-        document
-          .getElementById("searchBox")
-          .value
-          .toLowerCase();
-
-      let products =
-        document
-          .querySelectorAll(".product");
-
-      products.forEach(function(product) {
-
-        let text =
-          product.innerText.toLowerCase();
-
-        if (text.includes(input)) {
-
-          product.style.display = "block";
-
-        } else {
-
-          product.style.display = "none";
-
-        }
-
-      });
-
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
