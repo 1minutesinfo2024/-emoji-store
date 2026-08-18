@@ -9,297 +9,357 @@
 <style>
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  background:#f7f7fb;
-  color:#222;
+    background:#f7f7fb;
+    color:#222;
 }
 
+/* HEADER */
+
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(12px);
-  padding:14px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  box-shadow:0 3px 18px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    padding:12px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    box-shadow:0 3px 18px rgba(0,0,0,.08);
 }
 
 .logo{
-  font-size:24px;
-  font-weight:800;
-  color:#6c2bd9;
-  white-space:nowrap;
+    font-size:22px;
+    font-weight:800;
+    color:#6c2bd9;
+    white-space:nowrap;
+}
+
+#languageSelector{
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:10px 8px;
+    background:white;
+    font-size:13px;
+    outline:none;
+    max-width:145px;
 }
 
 .search{
-  width:250px;
-  padding:12px 18px;
-  border:1px solid #ddd;
-  border-radius:30px;
-  outline:none;
-  font-size:15px;
-  background:#fff;
+    width:250px;
+    padding:12px 18px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    outline:none;
+    font-size:15px;
+    background:#fff;
 }
 
+.search:focus{
+    border-color:#8a35ff;
+    box-shadow:0 0 0 3px rgba(138,53,255,.1);
+}
+
+/* HERO */
+
 .hero{
-  margin:25px 5%;
-  padding:55px 20px;
-  text-align:center;
-  border-radius:30px;
-  color:white;
-  background:linear-gradient(135deg,#6c2bd9,#a44cff,#ff5ec4);
-  box-shadow:0 15px 35px rgba(108,43,217,.25);
+    margin:25px 5%;
+    padding:55px 20px;
+    text-align:center;
+    border-radius:30px;
+    color:white;
+    background:linear-gradient(135deg,#6c2bd9,#a44cff,#ff5ec4);
+    box-shadow:0 15px 35px rgba(106,43,217,.25);
 }
 
 .hero h1{
-  font-size:42px;
-  margin-bottom:14px;
+    font-size:38px;
+    margin-bottom:14px;
 }
 
 .hero p{
-  font-size:18px;
-  margin-bottom:25px;
+    font-size:17px;
+    margin-bottom:25px;
 }
 
 .hero button{
-  border:0;
-  padding:14px 28px;
-  border-radius:30px;
-  background:white;
-  color:#6c2bd9;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
+    border:0;
+    padding:14px 28px;
+    border-radius:30px;
+    background:white;
+    color:#702bdc;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
+.hero button:hover{
+    transform:scale(1.04);
+}
+
+/* SECTION */
+
 .section{
-  padding:20px 5%;
+    padding:15px 4%;
 }
 
 .section-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .section-title h2{
-  font-size:25px;
+    font-size:21px;
 }
 
+/* CATEGORIES */
+
 .categories{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-  gap:12px;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
 }
 
 .category{
-  background:white;
-  padding:18px 8px;
-  border-radius:18px;
-  text-align:center;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,.07);
-  transition:.25s;
+    background:white;
+    border-radius:15px;
+    padding:14px 8px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.2s;
 }
 
 .category:hover{
-  transform:translateY(-5px);
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px rgba(0,0,0,.12);
 }
 
 .category span{
-  display:block;
-  font-size:34px;
-  margin-bottom:7px;
+    display:block;
+    font-size:30px;
+    margin-bottom:7px;
 }
 
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-.free-badge{
-  background:#e8fff0;
-  color:#16853c;
-}
-
-.premium-badge{
-  background:#fff0c7;
-  color:#b26a00;
-}
+/* PRODUCTS */
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
 
 .product{
-  position:relative;
-  background:white;
-  padding:18px;
-  border-radius:22px;
-  text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-  transition:.25s;
-  overflow:hidden;
+    background:white;
+    border-radius:18px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
 .product:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 28px rgba(0,0,0,.13);
-}
-
-.product.premium{
-  border:2px solid #ffd45c;
-}
-
-.crown{
-  position:absolute;
-  top:10px;
-  right:10px;
-  font-size:20px;
+    transform:translateY(-3px);
 }
 
 .product-image{
-  font-size:75px;
-  padding:15px;
+    font-size:58px;
+    margin:8px 0;
 }
 
 .product h3{
-  margin:7px 0;
-  font-size:17px;
+    font-size:14px;
+    min-height:35px;
 }
 
 .price{
-  color:#6c2bd9;
-  font-size:21px;
-  font-weight:bold;
-  margin:9px;
+    font-size:18px;
+    font-weight:bold;
+    margin:8px 0;
 }
 
-.free-price{
-  color:#16853c;
+.free-label{
+    color:#159447;
+    font-size:13px;
+    font-weight:bold;
 }
 
-.buy{
-  width:100%;
-  padding:11px;
-  border:0;
-  border-radius:12px;
-  background:#6c2bd9;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
+.product button{
+    border:0;
+    padding:9px 18px;
+    border-radius:20px;
+    background:#158b42;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.free-button{
-  background:#16853c;
+.premium{
+    border:1px solid #f1d264;
+    background:linear-gradient(180deg,#fff,#fffdf2);
 }
 
-.buy:hover{
-  opacity:.9;
+.premium button{
+    background:#702bdc;
 }
+
+/* PACK */
 
 .pack{
-  background:linear-gradient(135deg,#fff,#fff7df);
-  border:2px solid #ffd45c;
-  padding:30px 20px;
-  border-radius:25px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-top:20px;
+    padding:22px 15px;
+    border-radius:20px;
+    border:1px solid #f0d46b;
+    background:#fff;
+    text-align:center;
 }
 
-.pack h3{
-  font-size:25px;
-  margin-bottom:10px;
+.pack-icon{
+    font-size:38px;
+}
+
+.pack h2{
+    margin:8px 0;
+    font-size:19px;
+}
+
+.pack p{
+    margin:8px 0;
+    font-size:14px;
 }
 
 .pack-price{
-  color:#b26a00;
-  font-size:32px;
-  font-weight:bold;
-  margin:12px;
+    font-size:28px;
+    font-weight:bold;
+    margin:10px;
+    color:#222;
 }
 
+.pack button{
+    border:0;
+    background:#702bdc;
+    color:white;
+    border-radius:25px;
+    padding:12px 35px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* NO RESULT */
+
+.no-result{
+    text-align:center;
+    padding:30px;
+    display:none;
+    color:#777;
+}
+
+/* FOOTER */
+
 footer{
-  margin-top:45px;
-  padding:35px 5%;
-  background:#171321;
-  color:white;
-  text-align:center;
+    margin-top:30px;
+    padding:30px 15px;
+    background:#171323;
+    color:white;
+    text-align:center;
+}
+
+footer h3{
+    margin-bottom:10px;
 }
 
 footer p{
-  color:#bbb;
-  margin:8px;
+    font-size:13px;
+    color:#ddd;
 }
 
-@media(max-width:600px){
+/* MOBILE */
 
-  header{
-    padding:12px 4%;
-  }
+@media(max-width:700px){
 
-  .logo{
-    font-size:19px;
-  }
+    header{
+        flex-wrap:wrap;
+        padding:10px 4%;
+    }
 
-  .search{
-    width:145px;
-    padding:9px 12px;
-  }
+    .logo{
+        font-size:19px;
+    }
 
-  .hero{
-    margin:18px 4%;
-    padding:40px 15px;
-  }
+    #languageSelector{
+        max-width:125px;
+        font-size:12px;
+    }
 
-  .hero h1{
-    font-size:29px;
-  }
+    .search{
+        width:100%;
+        order:3;
+    }
 
-  .hero p{
-    font-size:15px;
-  }
+    .hero{
+        margin:20px 4%;
+        padding:42px 15px;
+    }
 
-  .section{
-    padding:15px 4%;
-  }
+    .hero h1{
+        font-size:29px;
+    }
 
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
+    .hero p{
+        font-size:15px;
+    }
 
-  .product{
-    padding:12px;
-  }
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
 
-  .product-image{
-    font-size:58px;
-  }
+    .category{
+        padding:12px 5px;
+        font-size:13px;
+    }
 
-  .product h3{
-    font-size:14px;
-  }
+    .category span{
+        font-size:27px;
+    }
 
-  .price{
-    font-size:18px;
-  }
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .product{
+        padding:10px;
+    }
+
+    .product-image{
+        font-size:50px;
+    }
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width:380px){
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
 
 }
 
@@ -308,456 +368,685 @@ footer p{
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-  <div class="logo">😊 EmojiMela</div>
+<div class="logo">😊 EmojiMela</div>
 
-  <input
-    class="search"
-    id="searchBox"
-    type="text"
-    placeholder="🔍 Emoji खोजें..."
-    onkeyup="searchEmoji()"
-  >
+<select id="languageSelector" onchange="changeLanguage(this.value)">
+
+<option value="hi">🇮🇳 हिन्दी</option>
+<option value="as">অসমীয়া</option>
+<option value="bn">বাংলা</option>
+<option value="bodo">बड़ो</option>
+<option value="doi">डोगरी</option>
+<option value="gu">ગુજરાતી</option>
+<option value="kn">ಕನ್ನಡ</option>
+<option value="ks">कॉशुर / کٲشُر</option>
+<option value="kok">कोंकणी</option>
+<option value="mai">मैथिली</option>
+<option value="ml">മലയാളം</option>
+<option value="mni">মৈতৈলোন্</option>
+<option value="mr">मराठी</option>
+<option value="ne">नेपाली</option>
+<option value="or">ଓଡ଼ିଆ</option>
+<option value="pa">ਪੰਜਾਬੀ</option>
+<option value="sa">संस्कृतम्</option>
+<option value="sat">ᱥᱟᱱᱛᱟᱲᱤ</option>
+<option value="sd">سنڌي</option>
+<option value="ta">தமிழ்</option>
+<option value="te">తెలుగు</option>
+<option value="ur">اردو</option>
+
+</select>
+
+<input
+class="search"
+id="searchBox"
+type="text"
+placeholder="🔍 Emoji खोजें..."
+onkeyup="searchEmoji()"
+>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-  <h1>😊 अपना Mood Emoji में बताइए</h1>
+<h1 id="heroTitle">😊 अपना Mood Emoji में बताएं</h1>
 
-  <p>
-    🆓 Free Emojis और 👑 Premium Emojis एक ही जगह
-  </p>
+<p id="heroText">
+🆓 Free Emojis और 👑 Premium Emojis एक ही जगह
+</p>
 
-  <button onclick="scrollToEmojis()">
-    🚀 Emojis देखें
-  </button>
+<button onclick="scrollToEmojis()" id="heroButton">
+🚀 Emojis देखें
+</button>
 
 </section>
 
+
+<!-- CATEGORIES -->
 
 <section class="section">
 
-  <div class="section-title">
-    <h2>📂 Categories</h2>
-  </div>
+<div class="section-title">
+<h2 id="categoryTitle">📂 Categories</h2>
+</div>
 
-  <div class="categories">
+<div class="categories">
 
-    <div class="category" onclick="filterCategory('Funny')">
-      <span>😂</span>
-      Funny
-    </div>
+<div class="category" onclick="filterCategory('funny')">
+<span>😂</span>
+<div data-key="funny">Funny</div>
+</div>
 
-    <div class="category" onclick="filterCategory('Love')">
-      <span>❤️</span>
-      Love
-    </div>
+<div class="category" onclick="filterCategory('love')">
+<span>❤️</span>
+<div data-key="love">Love</div>
+</div>
 
-    <div class="category" onclick="filterCategory('Sad')">
-      <span>😢</span>
-      Sad
-    </div>
+<div class="category" onclick="filterCategory('sad')">
+<span>😢</span>
+<div data-key="sad">Sad</div>
+</div>
 
-    <div class="category" onclick="filterCategory('Cool')">
-      <span>😎</span>
-      Cool
-    </div>
+<div class="category" onclick="filterCategory('cool')">
+<span>😎</span>
+<div data-key="cool">Cool</div>
+</div>
 
-    <div class="category" onclick="filterCategory('Cute')">
-      <span>🥰</span>
-      Cute
-    </div>
+<div class="category" onclick="filterCategory('cute')">
+<span>🥰</span>
+<div data-key="cute">Cute</div>
+</div>
 
-    <div class="category" onclick="filterCategory('Festival')">
-      <span>🎉</span>
-      Festival
-    </div>
+<div class="category" onclick="filterCategory('festival')">
+<span>🎉</span>
+<div data-key="festival">Festival</div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
+
+<!-- FREE EMOJIS -->
 
 <section class="section" id="emojis">
 
-  <div class="section-title">
+<div class="section-title">
+<h2 id="freeTitle">🆓 Free Emojis</h2>
+</div>
 
-    <h2>🆓 Free Emojis</h2>
+<div class="products">
 
-    <span class="badge free-badge">
-      FREE
-    </span>
-
-  </div>
-
-  <div class="products" id="freeList">
-
-    <div class="product" data-category="Funny">
-
-      <div class="product-image">😂</div>
-
-      <h3>Funny Laugh</h3>
-
-      <div class="price free-price">FREE</div>
-
-      <button
-        class="buy free-button"
-        onclick="useEmoji('😂 Funny Laugh')"
-      >
-        USE NOW
-      </button>
-
-    </div>
+<div class="product" data-category="funny" data-name="Funny Laugh 😂">
+<div class="product-image">😂</div>
+<h3 data-key="funnyLaugh">Funny Laugh</h3>
+<div class="free-label">FREE</div>
+<br>
+<button onclick="useEmoji('😂')">USE NOW</button>
+</div>
 
 
-    <div class="product" data-category="Love">
-
-      <div class="product-image">❤️</div>
-
-      <h3>Love Heart</h3>
-
-      <div class="price free-price">FREE</div>
-
-      <button
-        class="buy free-button"
-        onclick="useEmoji('❤️ Love Heart')"
-      >
-        USE NOW
-      </button>
-
-    </div>
+<div class="product" data-category="love" data-name="Love Heart ❤️">
+<div class="product-image">❤️</div>
+<h3 data-key="loveHeart">Love Heart</h3>
+<div class="free-label">FREE</div>
+<br>
+<button onclick="useEmoji('❤️')">USE NOW</button>
+</div>
 
 
-    <div class="product" data-category="Cool">
-
-      <div class="product-image">😎</div>
-
-      <h3>Cool Face</h3>
-
-      <div class="price free-price">FREE</div>
-
-      <button
-        class="buy free-button"
-        onclick="useEmoji('😎 Cool Face')"
-      >
-        USE NOW
-      </button>
-
-    </div>
+<div class="product" data-category="cool" data-name="Cool Face 😎">
+<div class="product-image">😎</div>
+<h3 data-key="coolFace">Cool Face</h3>
+<div class="free-label">FREE</div>
+<br>
+<button onclick="useEmoji('😎')">USE NOW</button>
+</div>
 
 
-    <div class="product" data-category="Cute">
+<div class="product" data-category="cute" data-name="Cute Love 🥰">
+<div class="product-image">🥰</div>
+<h3 data-key="cuteLove">Cute Love</h3>
+<div class="free-label">FREE</div>
+<br>
+<button onclick="useEmoji('🥰')">USE NOW</button>
+</div>
 
-      <div class="product-image">🥰</div>
-
-      <h3>Cute Love</h3>
-
-      <div class="price free-price">FREE</div>
-
-      <button
-        class="buy free-button"
-        onclick="useEmoji('🥰 Cute Love')"
-      >
-        USE NOW
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
+
+<!-- PREMIUM -->
 
 <section class="section">
 
-  <div class="section-title">
+<div class="section-title">
+<h2 id="premiumTitle">👑 Premium Emojis</h2>
+</div>
 
-    <h2>👑 Premium Emojis</h2>
-
-    <span class="badge premium-badge">
-      ₹5 EACH
-    </span>
-
-  </div>
-
-  <div class="products" id="premiumList">
+<div class="products">
 
 
-    <div class="product premium" data-category="Funny">
+<div class="product premium"
+data-category="funny"
+data-name="Premium Laugh 🤣">
 
-      <div class="crown">👑</div>
+<div class="product-image">🤣</div>
 
-      <div class="product-image">🤣</div>
+<h3 data-key="premiumLaugh">
+Premium Laugh
+</h3>
 
-      <h3>Premium Laugh</h3>
+<div class="price">₹5</div>
 
-      <div class="price">₹5</div>
+<button onclick="buyEmoji('Premium Laugh')">
+🔒 BUY ₹5
+</button>
 
-      <button
-        class="buy"
-        onclick="buyPremium('🤣 Premium Laugh')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
-
-
-    <div class="product premium" data-category="Love">
-
-      <div class="crown">👑</div>
-
-      <div class="product-image">💖</div>
-
-      <h3>Premium Love</h3>
-
-      <div class="price">₹5</div>
-
-      <button
-        class="buy"
-        onclick="buyPremium('💖 Premium Love')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
+</div>
 
 
-    <div class="product premium" data-category="Cool">
+<div class="product premium"
+data-category="love"
+data-name="Premium Love 💖">
 
-      <div class="crown">👑</div>
+<div class="product-image">💖</div>
 
-      <div class="product-image">🤑</div>
+<h3 data-key="premiumLove">
+Premium Love
+</h3>
 
-      <h3>Premium Money</h3>
+<div class="price">₹5</div>
 
-      <div class="price">₹5</div>
+<button onclick="buyEmoji('Premium Love')">
+🔒 BUY ₹5
+</button>
 
-      <button
-        class="buy"
-        onclick="buyPremium('🤑 Premium Money')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
-
-
-    <div class="product premium" data-category="Cute">
-
-      <div class="crown">👑</div>
-
-      <div class="product-image">😍</div>
-
-      <h3>Premium Cute</h3>
-
-      <div class="price">₹5</div>
-
-      <button
-        class="buy"
-        onclick="buyPremium('😍 Premium Cute')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
+</div>
 
 
-    <div class="product premium" data-category="Festival">
+<div class="product premium"
+data-category="love"
+data-name="Premium Money 🤑">
 
-      <div class="crown">👑</div>
+<div class="product-image">🤑</div>
 
-      <div class="product-image">🎊</div>
+<h3 data-key="premiumMoney">
+Premium Money
+</h3>
 
-      <h3>Premium Party</h3>
+<div class="price">₹5</div>
 
-      <div class="price">₹5</div>
+<button onclick="buyEmoji('Premium Money')">
+🔒 BUY ₹5
+</button>
 
-      <button
-        class="buy"
-        onclick="buyPremium('🎊 Premium Party')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
-
-
-    <div class="product premium" data-category="Sad">
-
-      <div class="crown">👑</div>
-
-      <div class="product-image">💔</div>
-
-      <h3>Premium Sad</h3>
-
-      <div class="price">₹5</div>
-
-      <button
-        class="buy"
-        onclick="buyPremium('💔 Premium Sad')"
-      >
-        🔒 BUY ₹5
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
+</div>
 
 
-<section class="section">
+<div class="product premium"
+data-category="cute"
+data-name="Premium Cute 😍">
 
-  <div class="pack">
+<div class="product-image">😍</div>
 
-    <h3>🎁 👑 Premium Emoji Pack</h3>
+<h3 data-key="premiumCute">
+Premium Cute
+</h3>
 
-    <p>
-      10 Premium Emojis एक साथ
-    </p>
+<div class="price">₹5</div>
 
-    <div class="pack-price">
-      ₹29
-    </div>
+<button onclick="buyEmoji('Premium Cute')">
+🔒 BUY ₹5
+</button>
 
-    <button
-      class="buy"
-      onclick="buyPack()"
-    >
-      👑 BUY PACK ₹29
-    </button>
+</div>
 
-  </div>
+
+<div class="product premium"
+data-category="festival"
+data-name="Premium Party 🥳">
+
+<div class="product-image">🥳</div>
+
+<h3 data-key="premiumParty">
+Premium Party
+</h3>
+
+<div class="price">₹5</div>
+
+<button onclick="buyEmoji('Premium Party')">
+🔒 BUY ₹5
+</button>
+
+</div>
+
+
+<div class="product premium"
+data-category="sad"
+data-name="Premium Sad 💔">
+
+<div class="product-image">💔</div>
+
+<h3 data-key="premiumSad">
+Premium Sad
+</h3>
+
+<div class="price">₹5</div>
+
+<button onclick="buyEmoji('Premium Sad')">
+🔒 BUY ₹5
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PREMIUM PACK -->
+
+<div class="pack">
+
+<div class="pack-icon">🎁 👑</div>
+
+<h2 id="packTitle">
+Premium Emoji Pack
+</h2>
+
+<p id="packText">
+10 Premium Emojis एक साथ
+</p>
+
+<div class="pack-price">
+₹29
+</div>
+
+<button onclick="buyPack()" id="packButton">
+👑 BUY PACK ₹29
+</button>
+
+</div>
 
 </section>
 
+
+<div class="no-result" id="noResult">
+😔 कोई Emoji नहीं मिला
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <h3>😊 EmojiMela</h3>
+<h3>😊 EmojiMela</h3>
 
-  <p>🆓 Free Emojis | 👑 Premium Emojis ₹5 से</p>
+<p id="footerText">
+🆓 Free Emojis | 👑 Premium Emojis ₹5 से शुरू
+</p>
 
-  <p>© 2026 EmojiMela. All Rights Reserved.</p>
+<p>
+© 2026 EmojiMela. All Rights Reserved.
+</p>
 
 </footer>
 
 
 <script>
 
-function scrollToEmojis(){
+/* ================================
+   LANGUAGE SYSTEM
+================================ */
 
-  document
-    .getElementById("emojis")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+const translations = {
 
-}
+hi:{
+heroTitle:"😊 अपना Mood Emoji में बताएं",
+heroText:"🆓 Free Emojis और 👑 Premium Emojis एक ही जगह",
+heroButton:"🚀 Emojis देखें",
+categoryTitle:"📂 Categories",
+funny:"Funny",
+love:"Love",
+sad:"Sad",
+cool:"Cool",
+cute:"Cute",
+festival:"Festival",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+funnyLaugh:"Funny Laugh",
+loveHeart:"Love Heart",
+coolFace:"Cool Face",
+cuteLove:"Cute Love",
+premiumLaugh:"Premium Laugh",
+premiumLove:"Premium Love",
+premiumMoney:"Premium Money",
+premiumCute:"Premium Cute",
+premiumParty:"Premium Party",
+premiumSad:"Premium Sad",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis एक साथ",
+packButton:"👑 BUY PACK ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 से शुरू",
+search:"🔍 Emoji खोजें...",
+noResult:"😔 कोई Emoji नहीं मिला"
+},
 
+as:{
+heroTitle:"😊 আপোনাৰ Mood Emoji-ত প্ৰকাশ কৰক",
+heroText:"🆓 Free Emojis আৰু 👑 Premium Emojis একে ঠাইত",
+heroButton:"🚀 Emojis চাওক",
+categoryTitle:"📂 শ্ৰেণী",
+funny:"ধেমেলীয়া",
+love:"ভালপোৱা",
+sad:"দুখীয়া",
+cool:"কুল",
+cute:"মৰমলগা",
+festival:"উৎসৱ",
+freeTitle:"🆓 বিনামূলীয়া Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"১০টা Premium Emoji একেলগে",
+packButton:"👑 PACK কিনক ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 ৰ পৰা",
+search:"🔍 Emoji বিচাৰক...",
+noResult:"😔 কোনো Emoji পোৱা নগ'ল"
+},
 
-function useEmoji(name){
+bn:{
+heroTitle:"😊 আপনার Mood Emoji-তে জানান",
+heroText:"🆓 Free Emojis এবং 👑 Premium Emojis এক জায়গায়",
+heroButton:"🚀 Emojis দেখুন",
+categoryTitle:"📂 বিভাগ",
+funny:"মজার",
+love:"ভালোবাসা",
+sad:"দুঃখ",
+cool:"কুল",
+cute:"মিষ্টি",
+festival:"উৎসব",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"একসাথে ১০টি Premium Emoji",
+packButton:"👑 PACK কিনুন ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 থেকে",
+search:"🔍 Emoji খুঁজুন...",
+noResult:"😔 কোনো Emoji পাওয়া যায়নি"
+},
 
-  alert(
-    "🎉 आपने " +
-    name +
-    " चुना है!\n\n" +
-    "यह Free Emoji है।"
-  );
+gu:{
+heroTitle:"😊 તમારો Mood Emoji માં જણાવો",
+heroText:"🆓 Free Emojis અને 👑 Premium Emojis એક જ જગ્યાએ",
+heroButton:"🚀 Emojis જુઓ",
+categoryTitle:"📂 શ્રેણીઓ",
+funny:"મજેદાર",
+love:"પ્રેમ",
+sad:"ઉદાસ",
+cool:"કૂલ",
+cute:"ક્યૂટ",
+festival:"તહેવાર",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"એક સાથે 10 Premium Emojis",
+packButton:"👑 PACK ખરીદો ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 થી",
+search:"🔍 Emoji શોધો...",
+noResult:"😔 કોઈ Emoji મળ્યું નથી"
+},
 
-}
+mr:{
+heroTitle:"😊 तुमचा Mood Emoji मध्ये सांगा",
+heroText:"🆓 Free Emojis आणि 👑 Premium Emojis एकाच ठिकाणी",
+heroButton:"🚀 Emojis पहा",
+categoryTitle:"📂 श्रेणी",
+funny:"मजेदार",
+love:"प्रेम",
+sad:"दुःखी",
+cool:"कूल",
+cute:"गोंडस",
+festival:"सण",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"एकाच वेळी 10 Premium Emojis",
+packButton:"👑 PACK खरेदी करा ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 पासून",
+search:"🔍 Emoji शोधा...",
+noResult:"😔 कोणताही Emoji सापडला नाही"
+},
 
+ta:{
+heroTitle:"😊 உங்கள் Mood-ஐ Emoji-ல் சொல்லுங்கள்",
+heroText:"🆓 Free Emojis மற்றும் 👑 Premium Emojis ஒரே இடத்தில்",
+heroButton:"🚀 Emojis பார்க்கவும்",
+categoryTitle:"📂 வகைகள்",
+funny:"வேடிக்கை",
+love:"காதல்",
+sad:"சோகம்",
+cool:"கூல்",
+cute:"அழகு",
+festival:"திருவிழா",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis ஒன்றாக",
+packButton:"👑 PACK வாங்க ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 முதல்",
+search:"🔍 Emoji தேடுங்கள்...",
+noResult:"😔 Emoji எதுவும் கிடைக்கவில்லை"
+},
 
-function buyPremium(name){
+te:{
+heroTitle:"😊 మీ Mood ను Emoji లో చెప్పండి",
+heroText:"🆓 Free Emojis మరియు 👑 Premium Emojis ఒకే చోట",
+heroButton:"🚀 Emojis చూడండి",
+categoryTitle:"📂 వర్గాలు",
+funny:"ఫన్నీ",
+love:"ప్రేమ",
+sad:"విచారం",
+cool:"కూల్",
+cute:"క్యూట్",
+festival:"పండుగ",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis ఒకేసారి",
+packButton:"👑 PACK కొనండి ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 నుండి",
+search:"🔍 Emoji వెతకండి...",
+noResult:"😔 Emoji ఏదీ కనుగొనబడలేదు"
+},
 
-  alert(
-    "👑 " +
-    name +
-    "\n\n" +
-    "कीमत: ₹5\n\n" +
-    "💳 Payment System अगले Step में जोड़ा जाएगा।"
-  );
+kn:{
+heroTitle:"😊 ನಿಮ್ಮ Mood ಅನ್ನು Emoji ನಲ್ಲಿ ತಿಳಿಸಿ",
+heroText:"🆓 Free Emojis ಮತ್ತು 👑 Premium Emojis ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ",
+heroButton:"🚀 Emojis ನೋಡಿ",
+categoryTitle:"📂 ವರ್ಗಗಳು",
+funny:"ತಮಾಷೆ",
+love:"ಪ್ರೀತಿ",
+sad:"ದುಃಖ",
+cool:"ಕೂಲ್",
+cute:"ಮುದ್ದು",
+festival:"ಹಬ್ಬ",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"ಒಟ್ಟಿಗೆ 10 Premium Emojis",
+packButton:"👑 PACK ಖರೀದಿಸಿ ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 ರಿಂದ",
+search:"🔍 Emoji ಹುಡುಕಿ...",
+noResult:"😔 Emoji ಕಂಡುಬಂದಿಲ್ಲ"
+},
 
-}
+ml:{
+heroTitle:"😊 നിങ്ങളുടെ Mood Emoji-യിൽ പറയൂ",
+heroText:"🆓 Free Emojis ഉം 👑 Premium Emojis ഉം ഒരിടത്ത്",
+heroButton:"🚀 Emojis കാണുക",
+categoryTitle:"📂 വിഭാഗങ്ങൾ",
+funny:"രസകരം",
+love:"സ്നേഹം",
+sad:"ദുഃഖം",
+cool:"കൂൾ",
+cute:"ക്യൂട്ട്",
+festival:"ഉത്സവം",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis ഒരുമിച്ച്",
+packButton:"👑 PACK വാങ്ങുക ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 മുതൽ",
+search:"🔍 Emoji തിരയുക...",
+noResult:"😔 Emoji ഒന്നും കണ്ടെത്തിയില്ല"
+},
 
+pa:{
+heroTitle:"😊 ਆਪਣਾ Mood Emoji ਵਿੱਚ ਦੱਸੋ",
+heroText:"🆓 Free Emojis ਅਤੇ 👑 Premium Emojis ਇੱਕੋ ਥਾਂ",
+heroButton:"🚀 Emojis ਵੇਖੋ",
+categoryTitle:"📂 ਸ਼੍ਰੇਣੀਆਂ",
+funny:"ਮਜ਼ਾਕੀਆ",
+love:"ਪਿਆਰ",
+sad:"ਉਦਾਸ",
+cool:"ਕੂਲ",
+cute:"ਪਿਆਰਾ",
+festival:"ਤਿਉਹਾਰ",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis ਇੱਕਠੇ",
+packButton:"👑 PACK ਖਰੀਦੋ ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 ਤੋਂ",
+search:"🔍 Emoji ਖੋਜੋ...",
+noResult:"😔 ਕੋਈ Emoji ਨਹੀਂ ਮਿਲਿਆ"
+},
 
-function buyPack(){
+or:{
+heroTitle:"😊 ଆପଣଙ୍କ Mood Emoji ରେ କୁହନ୍ତୁ",
+heroText:"🆓 Free Emojis ଏବଂ 👑 Premium Emojis ଏକ ସ୍ଥାନରେ",
+heroButton:"🚀 Emojis ଦେଖନ୍ତୁ",
+categoryTitle:"📂 ବିଭାଗ",
+funny:"ମଜାଳିଆ",
+love:"ପ୍ରେମ",
+sad:"ଦୁଃଖ",
+cool:"କୁଲ",
+cute:"ସୁନ୍ଦର",
+festival:"ପର୍ବ",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"ଏକାସାଙ୍ଗରେ 10 Premium Emojis",
+packButton:"👑 PACK କିଣନ୍ତୁ ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 ରୁ",
+search:"🔍 Emoji ଖୋଜନ୍ତୁ...",
+noResult:"😔 କୌଣସି Emoji ମିଳିଲା ନାହିଁ"
+},
 
-  alert(
-    "🎁 Premium Emoji Pack\n\n" +
-    "10 Premium Emojis = ₹29\n\n" +
-    "💳 Payment System अगले Step में जोड़ा जाएगा।"
-  );
+ne:{
+heroTitle:"😊 आफ्नो Mood Emoji मा बताउनुहोस्",
+heroText:"🆓 Free Emojis र 👑 Premium Emojis एउटै ठाउँमा",
+heroButton:"🚀 Emojis हेर्नुहोस्",
+categoryTitle:"📂 वर्गहरू",
+funny:"रमाइलो",
+love:"माया",
+sad:"दुःखी",
+cool:"कूल",
+cute:"प्यारो",
+festival:"चाडपर्व",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"एकैपटक १० Premium Emojis",
+packButton:"👑 PACK किन्नुहोस् ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 देखि",
+search:"🔍 Emoji खोज्नुहोस्...",
+noResult:"😔 कुनै Emoji भेटिएन"
+},
 
-}
+ur:{
+heroTitle:"😊 اپنا Mood Emoji میں بتائیں",
+heroText:"🆓 Free Emojis اور 👑 Premium Emojis ایک ہی جگہ",
+heroButton:"🚀 Emojis دیکھیں",
+categoryTitle:"📂 زمرے",
+funny:"مزاحیہ",
+love:"محبت",
+sad:"اداس",
+cool:"کول",
+cute:"پیارا",
+festival:"تہوار",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis ایک ساتھ",
+packButton:"👑 PACK خریدیں ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 سے",
+search:"🔍 Emoji تلاش کریں...",
+noResult:"😔 کوئی Emoji نہیں ملا"
+},
 
+sa:{
+heroTitle:"😊 स्वस्य Mood Emoji मध्ये वदतु",
+heroText:"🆓 Free Emojis तथा 👑 Premium Emojis एकत्र",
+heroButton:"🚀 Emojis पश्यन्तु",
+categoryTitle:"📂 वर्गाः",
+funny:"हास्यम्",
+love:"प्रेम",
+sad:"दुःखम्",
+cool:"कूल",
+cute:"सुन्दरम्",
+festival:"उत्सवः",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"दश Premium Emojis एकत्र",
+packButton:"👑 PACK क्रीणीत ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 आरभ्य",
+search:"🔍 Emoji अन्वेषयतु...",
+noResult:"😔 कश्चित् Emoji न प्राप्तः"
+},
 
-function searchEmoji(){
+sd:{
+heroTitle:"😊 پنهنجو Mood Emoji ۾ ٻڌايو",
+heroText:"🆓 Free Emojis ۽ 👑 Premium Emojis هڪ جاءِ تي",
+heroButton:"🚀 Emojis ڏسو",
+categoryTitle:"📂 زمرا",
+funny:"مزاحيه",
+love:"پيار",
+sad:"اداس",
+cool:"ڪول",
+cute:"پيارو",
+festival:"تہوار",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"10 Premium Emojis گڏ",
+packButton:"👑 PACK خريد ڪريو ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emojis ₹5 کان",
+search:"🔍 Emoji ڳوليو...",
+noResult:"😔 ڪو Emoji نه مليو"
+},
 
-  let input =
-    document
-      .getElementById("searchBox")
-      .value
-      .toLowerCase();
-
-  let products =
-    document.querySelectorAll(".product");
-
-  products.forEach(function(product){
-
-    let text =
-      product.innerText.toLowerCase();
-
-    if(text.includes(input)){
-
-      product.style.display="block";
-
-    }else{
-
-      product.style.display="none";
-
-    }
-
-  });
-
-}
-
-
-function filterCategory(category){
-
-  let products =
-    document.querySelectorAll(".product");
-
-  products.forEach(function(product){
-
-    let productCategory =
-      product.getAttribute("data-category");
-
-    if(productCategory === category){
-
-      product.style.display="block";
-
-    }else{
-
-      product.style.display="none";
-
-    }
-
-  });
-
-  document
-    .getElementById("emojis")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-</script>
-
-</body>
-</html>
+mai:{
+heroTitle:"😊 अपन Mood Emoji मे बताउ",
+heroText:"🆓 Free Emojis आ 👑 Premium Emojis एकहि ठाम",
+heroButton:"🚀 Emojis देखू",
+categoryTitle:"📂 श्रेणी",
+funny:"हँसगर",
+love:"प्रेम",
+sad:"उदास",
+cool:"कूल",
+cute:"प्यार",
+festival:"पर्व",
+freeTitle:"🆓 Free Emojis",
+premiumTitle:"👑 Premium Emojis",
+packTitle:"🎁 👑 Premium Emoji Pack",
+packText:"एक संग 10 Premium Emojis",
+packButton:"👑 PACK कीनू ₹29",
+footerText:"🆓 Free Emojis | 👑 Premium Emoji
