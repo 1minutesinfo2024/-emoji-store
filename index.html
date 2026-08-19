@@ -609,6 +609,62 @@ async function loadEmojisFromSupabase() {
     }
 
     const emojis = await response.json();
+  console.log("Supabase से emojis:", emojis);
+
+const freeGrid = document.getElementById("freeGrid");
+const premiumGrid = document.getElementById("emojiGrid");
+
+if (freeGrid) freeGrid.innerHTML = "";
+if (premiumGrid) premiumGrid.innerHTML = "";
+
+emojis.forEach(item => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const emoji = item.emoji || "😊";
+    const name = item.name || "Emoji";
+    const price = Number(item.price || 0);
+
+    card.setAttribute(
+        "data-name",
+        name.toLowerCase()
+    );
+
+    card.innerHTML = `
+        <div class="emoji">${emoji}</div>
+        <div class="emoji-name">${name}</div>
+        ${
+            price > 0
+            ? `<div class="emoji-price">₹${price}</div>`
+            : `<div class="emoji-price">FREE</div>`
+        }
+        <button class="action-btn">
+            ${price > 0 ? "🛒 Buy ₹" + price : "✨ Use Emoji"}
+        </button>
+    `;
+
+    const button = card.querySelector("button");
+
+    button.addEventListener("click", function () {
+        if (price > 0) {
+            openPurchase(`${emoji} ${name}`);
+        } else {
+            openPurchase(`${emoji} ${name}`);
+        }
+    });
+
+    if (price > 0) {
+        if (premiumGrid) {
+            premiumGrid.appendChild(card);
+        }
+    } else {
+        if (freeGrid) {
+            freeGrid.appendChild(card);
+        }
+    }
+});
+}
 
     console.log("Supabase से emojis:", emojis);
     console.log("कुल emojis:", emojis.length);
@@ -625,5 +681,4 @@ loadEmojisFromSupabase();
 
 </body>
 </html>
-</body>
-</html>
+
