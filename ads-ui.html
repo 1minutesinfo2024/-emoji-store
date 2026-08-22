@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EmojiMela Ads UI</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans",sans-serif;background:#f7f4ff;color:#17162a}
+.ads-wrap{max-width:1100px;margin:auto;padding:14px}
+.ad{position:relative;overflow:hidden;border-radius:18px;margin:12px 0;min-height:90px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(135deg,#30206b,#8a2be2,#ec4899);color:#fff;box-shadow:0 10px 28px rgba(75,40,140,.20)}
+.ad:before{content:"ADVERTISEMENT";position:absolute;top:6px;right:12px;font-size:9px;letter-spacing:1px;opacity:.65}
+.ad-text h3{margin:0 0 5px;font-size:21px}.ad-text p{margin:0;font-size:13px;opacity:.92}
+.ad-btn{flex:none;border:0;border-radius:999px;padding:11px 18px;background:#fff;color:#5520a8;font-weight:800;cursor:pointer}
+.ad-mini{min-height:72px;background:linear-gradient(135deg,#5b21b6,#db2777)}
+.ad-native{min-height:120px;background:#fff;color:#29223f;border:1px solid #eadff7}
+.ad-native .ad-btn{background:#6d28d9;color:#fff}
+@media(max-width:600px){.ad{padding:16px;align-items:flex-start}.ad-text h3{font-size:18px}.ad-btn{padding:9px 14px}}
+</style>
+</head>
+<body>
+<div class="ads-wrap">
+<section class="ad"><div class="ad-text"><h3>✨ Discover Something New</h3><p>EmojiMela पर नई collections और trending reactions देखें।</p></div><button class="ad-btn" onclick="alert('Advertisement area')">Explore</button></section>
+<section class="ad ad-mini"><div class="ad-text"><h3>🔥 Trending Now</h3><p>आपकी पसंद के लिए fresh emoji collections.</p></div><button class="ad-btn" onclick="alert('Advertisement area')">View</button></section>
+<section class="ad ad-native"><div class="ad-text"><h3>💜 EmojiMela Exclusive</h3><p>Premium emoji collection — simple, fun और affordable.</p></div><button class="ad-btn" onclick="alert('Advertisement area')">Learn More</button></section>
+</div>
+</body>
+</html>
